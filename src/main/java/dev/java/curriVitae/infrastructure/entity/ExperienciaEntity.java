@@ -1,7 +1,7 @@
-package dev.java.curriVitae.domain;
+package dev.java.curriVitae.infrastructure.entity;
 
-import dev.java.curriVitae.domain.enums.ContratoEnum;
-import dev.java.curriVitae.domain.enums.ModalidadeEnum;
+import dev.java.curriVitae.infrastructure.enums.ContratoEnum;
+import dev.java.curriVitae.infrastructure.enums.ModalidadeEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

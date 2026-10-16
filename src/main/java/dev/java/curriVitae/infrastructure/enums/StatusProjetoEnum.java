@@ -1,4 +1,4 @@
-package dev.java.curriVitae.domain.enums;
+package dev.java.curriVitae.infrastructure.enums;
 
 public enum StatusProjetoEnum {
     EM_ANDAMENTO,

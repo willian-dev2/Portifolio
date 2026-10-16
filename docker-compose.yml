@@ -3,21 +3,35 @@ version: '3.8'
 services:
   app:
     build: .
+    container_name: currivitae-app
+    profiles: ["full"]
     ports:
       - "9090:9090"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/portifolio
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: Vini-sousa-123
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/${DB_NAME}
+      SPRING_DATASOURCE_USERNAME: ${DB_USER}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      ADMIN_SETUP_TOKEN: ${ADMIN_SETUP_TOKEN}
     depends_on:
-      - db
-
+      db:
+        condition: service_healthy
 
   db:
-    image: postgres:latest
+    image: postgres:17
+    container_name: pg-currivitae
     environment:
-      POSTGRES_DB: portifolio
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: Vini-sousa-123
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
     ports:
       - "5432:5432"
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}" ]
+      interval: 5s
+      retries: 10
+
+volumes:
+  pg-data:

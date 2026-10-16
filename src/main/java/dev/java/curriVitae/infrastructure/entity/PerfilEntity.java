@@ -1,4 +1,4 @@
-package dev.java.curriVitae.domain;
+package dev.java.curriVitae.infrastructure.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

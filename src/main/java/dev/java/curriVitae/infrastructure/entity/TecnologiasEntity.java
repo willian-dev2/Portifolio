@@ -1,7 +1,7 @@
-package dev.java.curriVitae.domain;
+package dev.java.curriVitae.infrastructure.entity;
 
-import dev.java.curriVitae.domain.enums.CategoriaEnum;
-import dev.java.curriVitae.domain.enums.NivelEnum;
+import dev.java.curriVitae.infrastructure.enums.CategoriaEnum;
+import dev.java.curriVitae.infrastructure.enums.NivelEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

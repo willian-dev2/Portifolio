@@ -13,9 +13,6 @@ import lombok.*;
 public class UsuarioLoginDTO {
 
     @NotBlank
-    private String nome;
-
-    @NotBlank
     @Email
     private String email;
 

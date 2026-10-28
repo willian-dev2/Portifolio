@@ -3,10 +3,7 @@ package dev.java.curriVitae.infrastructure.entity;
 import dev.java.curriVitae.infrastructure.enums.EscolaridadeEnum;
 import dev.java.curriVitae.infrastructure.enums.StatusEscolaridadeEnum;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 
@@ -16,6 +13,7 @@ import java.time.LocalDate;
 @Setter
 @Entity
 @Table(name = "formacao")
+@Builder
 public class FormacaoEntity {
 
     @Id

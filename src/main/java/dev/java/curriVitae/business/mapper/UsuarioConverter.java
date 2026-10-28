@@ -9,7 +9,6 @@ public interface UsuarioConverter {
 
     UsuarioEntity paraUsuarioEntity(RegistroRequest registroRequest);
 
-
     RegistroRequest paraRegistroRequest(UsuarioEntity usuarioEntity);
 
 }

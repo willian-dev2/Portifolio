@@ -10,7 +10,7 @@ FROM eclipse-temurin:17-jre-alpine
 
 WORKDIR /app
 
-COPY target/curriVitae-0.0.1-SNAPSHOT.jar /app/curriVitae.jar
+COPY --from=build /app/target/curriVitae-0.0.1-SNAPSHOT.jar /app/curriVitae.jar
 
 EXPOSE 9090
 

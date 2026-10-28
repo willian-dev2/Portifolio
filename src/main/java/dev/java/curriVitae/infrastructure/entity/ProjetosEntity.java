@@ -2,7 +2,10 @@ package dev.java.curriVitae.infrastructure.entity;
 
 import dev.java.curriVitae.infrastructure.enums.StatusProjetoEnum;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -14,29 +17,25 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "projetos")
-@Builder
 public class ProjetosEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "titulo", length = 120)
-    private String titulo;
-
     @Column(name = "slug", length = 300)
     private String slug;
 
-    @Column(name = "resumo", length = 400)
+    @Column(name = "resumo", length = 200)
     private String resumo;
 
-    @Column(name = "descricao", columnDefinition = "TEXT")
+    @Column(name = "descricao", length = 400)
     private String descricao;
 
-    @Column(name = "arquitetura", columnDefinition = "TEXT")
+    @Column(name = "arquitetura", length = 400)
     private String arquitetura;
 
-    @Column(name = "imagem", length = 500)
+    @Column(name = "imagem")
     private String imagemCapaUrl;
 
     @Column(name = "gitHub", length = 200)
@@ -50,7 +49,7 @@ public class ProjetosEntity {
     private boolean destaque;
 
     @Column(name = "data_inicio", length = 300)
-    private LocalDate dataInicial;
+    private LocalDate dataIncial;
 
     @Column(name = "data_fim", length = 300)
     private LocalDate dataFinal;

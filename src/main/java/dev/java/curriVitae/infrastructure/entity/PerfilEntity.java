@@ -1,10 +1,7 @@
 package dev.java.curriVitae.infrastructure.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,6 +9,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "perfil")
+@Builder
 public class PerfilEntity {
 
     @Id
@@ -24,10 +22,10 @@ public class PerfilEntity {
     @Column(name = "titulo", length = 50)
     private String titulo;
 
-    @Column(name = "bio", length = 300)
+    @Column(name = "bio", columnDefinition = "TEXT")
     private String bio;
 
-    @Column(name = "fotoUrl", length = 50)
+    @Column(name = "fotoUrl", length = 500)
     private String fotoUrl;
 
     @Column(name = "localização", length = 50)

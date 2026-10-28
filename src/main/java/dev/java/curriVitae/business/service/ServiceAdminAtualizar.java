@@ -28,10 +28,10 @@ public class ServiceAdminAtualizar {
 
 
     // métodos para atualização das tabelas
-    public ExperienciaDTO atualizarExperiencia(ExperienciaDTO experienciaDTO) {
+    public ExperienciaDTO atualizarExperiencia(ExperienciaDTO experienciaDTO, Long id) {
 
-        ExperienciaEntity experencia = experienciaRepository.findAllby().orElseThrow(
-                () -> new RuntimeException("Tabela não encontrada"));
+        ExperienciaEntity experencia = experienciaRepository.findById(id).orElseThrow(
+                () -> new RuntimeException("Experiência não encontrada"));
 
         experienciaConverter.updateEntityExperiencia(experienciaDTO, experencia);
 
@@ -40,9 +40,9 @@ public class ServiceAdminAtualizar {
 
 
 
-    public FormacaoDTO atualizarFormacao(FormacaoDTO formacaoDTO) {
+    public FormacaoDTO atualizarFormacao(FormacaoDTO formacaoDTO, Long id) {
 
-        FormacaoEntity formacao = formacaoRepository.findAllby().orElseThrow(
+        FormacaoEntity formacao = formacaoRepository.findById(id).orElseThrow(
                 () -> new RuntimeException("Tabela não encontrada"));
 
         formacaoConverter.updateEntityFormacao(formacaoDTO, formacao);
@@ -52,9 +52,9 @@ public class ServiceAdminAtualizar {
 
 
 
-    public TecnologiasDTO atualizarTecnologias(TecnologiasDTO tecnologiasDTO) {
+    public TecnologiasDTO atualizarTecnologias(TecnologiasDTO tecnologiasDTO, Long id) {
 
-        TecnologiasEntity tecnologia = tecnologiasRepository.findAllby().orElseThrow(
+        TecnologiasEntity tecnologia = tecnologiasRepository.findById(id).orElseThrow(
                 () -> new  RuntimeException("Tabela não encontrada"));
 
         tecnologiasConverter.updateEntityTecnologias(tecnologiasDTO, tecnologia);
@@ -64,9 +64,9 @@ public class ServiceAdminAtualizar {
 
 
 
-    public ProjetosDTO atualizarProjetos(ProjetosDTO projetosDTO) {
+    public ProjetosDTO atualizarProjetos(ProjetosDTO projetosDTO, Long id) {
 
-        ProjetosEntity projetos = projetosRepository.findAllby().orElseThrow(
+        ProjetosEntity projetos = projetosRepository.findById(id).orElseThrow(
                 () -> new RuntimeException("Tabela não encontrada"));
 
         projetosConverter.updateEntityProjetos(projetosDTO, projetos);
@@ -76,9 +76,9 @@ public class ServiceAdminAtualizar {
 
 
 
-    public PerfilDTO atualizarPerfil(PerfilDTO perfilDTO) {
+    public PerfilDTO atualizarPerfil(PerfilDTO perfilDTO, Long id) {
 
-        PerfilEntity perfil = perfilRepository.findAllby().orElseThrow(
+        PerfilEntity perfil = perfilRepository.findById(id).orElseThrow(
                 () -> new RuntimeException("Tabela não encontrada"));
 
         perfilConverter.updateEntityPerfil(perfilDTO, perfil);

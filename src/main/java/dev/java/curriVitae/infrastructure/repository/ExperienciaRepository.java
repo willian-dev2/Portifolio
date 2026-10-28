@@ -8,10 +8,4 @@ import java.util.Optional;
 
 public interface ExperienciaRepository extends JpaRepository<ExperienciaEntity, Long> {
 
-    List<ExperienciaEntity> findAll();
-
-    Optional<ExperienciaEntity> findAllby();
-
-    Optional<ExperienciaEntity> findById(Long id);
-
 }

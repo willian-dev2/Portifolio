@@ -39,7 +39,7 @@ public class ServiceAdminDeletar {
 
     public void deletarFormacao(Long id) {
         if(!formacaoRepository.existsById(id)) {
-            throw new ResourceNotFoundException("Experiencia não encontrada");
+            throw new ResourceNotFoundException("Formação não encontrada");
         }
 
         formacaoRepository.deleteById(id);
@@ -49,7 +49,7 @@ public class ServiceAdminDeletar {
 
     public void deletarPerfil(Long id) {
         if(!perfilRepository.existsById(id)) {
-            throw new ResourceNotFoundException("Experiencia não encontrada");
+            throw new ResourceNotFoundException("Perfil não encontrado");
         }
 
         perfilRepository.deleteById(id);
@@ -59,7 +59,7 @@ public class ServiceAdminDeletar {
 
     public void deletarProjetos(Long id) {
         if(!projetosRepository.existsById(id)) {
-            throw new ResourceNotFoundException("Experiencia não encontrada");
+            throw new ResourceNotFoundException("Projeto não encontrado");
         }
 
         projetosRepository.deleteById(id);
@@ -69,7 +69,7 @@ public class ServiceAdminDeletar {
 
     public void deletarTecnologias(Long id) {
         if(!tecnologiasRepository.existsById(id)) {
-            throw new ResourceNotFoundException("Experiencia não encontrada");
+            throw new ResourceNotFoundException("Tecnologia não encontrada");
         }
 
         tecnologiasRepository.deleteById(id);

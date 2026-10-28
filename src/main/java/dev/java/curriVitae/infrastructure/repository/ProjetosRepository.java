@@ -9,10 +9,4 @@ import java.util.Optional;
 
 public interface ProjetosRepository extends JpaRepository<ProjetosEntity, Long> {
 
-    List<ProjetosEntity> findAll();
-
-    Optional<ProjetosEntity> findAllby();
-
-    Optional<ProjetosEntity> findById(Long id);
-
 }

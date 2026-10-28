@@ -29,7 +29,7 @@ public class GlobalExceptionHandle {
     public ResponseEntity<Map<String, String>> handleRunTime(RuntimeException ex) {
         Map<String, String> error = new HashMap<>();
         error.put("error", "erro interno no servidor");
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error); // 400
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error); // 400
     }
 
     @ExceptionHandler(BadCredentialsException.class)

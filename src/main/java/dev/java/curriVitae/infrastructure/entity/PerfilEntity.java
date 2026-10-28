@@ -22,10 +22,10 @@ public class PerfilEntity {
     @Column(name = "titulo", length = 50)
     private String titulo;
 
-    @Column(name = "bio", length = 300)
+    @Column(name = "bio", columnDefinition = "TEXT")
     private String bio;
 
-    @Column(name = "fotoUrl", length = 50)
+    @Column(name = "fotoUrl", length = 500)
     private String fotoUrl;
 
     @Column(name = "localização", length = 50)

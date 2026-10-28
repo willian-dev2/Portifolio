@@ -21,19 +21,22 @@ public class ProjetosEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "titulo", length = 120)
+    private String titulo;
+
     @Column(name = "slug", length = 300)
     private String slug;
 
     @Column(name = "resumo", length = 200)
     private String resumo;
 
-    @Column(name = "descricao", length = 400)
+    @Column(name = "descricao", columnDefinition = "TEXT")
     private String descricao;
 
-    @Column(name = "arquitetura", length = 400)
+    @Column(name = "arquitetura", columnDefinition = "TEXT")
     private String arquitetura;
 
-    @Column(name = "imagem")
+    @Column(name = "imagem", length = 500)
     private String imagemCapaUrl;
 
     @Column(name = "gitHub", length = 200)

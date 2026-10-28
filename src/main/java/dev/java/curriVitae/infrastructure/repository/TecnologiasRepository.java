@@ -9,10 +9,4 @@ import java.util.Optional;
 
 public interface TecnologiasRepository extends JpaRepository<TecnologiasEntity, Long> {
 
-    List<TecnologiasEntity> findAll();
-
-    Optional<TecnologiasEntity> findAllby();
-
-    Optional<TecnologiasEntity> findById(Long id);
-
 }

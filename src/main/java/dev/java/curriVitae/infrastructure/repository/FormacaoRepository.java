@@ -9,10 +9,4 @@ import java.util.Optional;
 
 public interface FormacaoRepository extends JpaRepository<FormacaoEntity, Long> {
 
-    List<FormacaoEntity> findAll();
-
-    Optional<FormacaoEntity> findAllby();
-
-    Optional<FormacaoEntity> findById(Long id);
-
 }

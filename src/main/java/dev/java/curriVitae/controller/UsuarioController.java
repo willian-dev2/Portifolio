@@ -91,7 +91,7 @@ public class UsuarioController {
     }
 
 
-    @GetMapping("/buscar-tecnologias{id}")
+    @GetMapping("/buscar-tecnologias/{id}")
     public ResponseEntity<TecnologiasDTO> buscarTecnologiasPorId(@PathVariable Long id){
         return ResponseEntity.ok(usuarioService.buscarTecnologiaPorId(id));
     }

@@ -48,7 +48,7 @@ public class AdminControllerRegistrar {
     }
 
 
-    @PostMapping("/formacao")
+    @PostMapping("/tecnologia")
     public ResponseEntity<TecnologiasDTO> registrarNovaTecnologia(@RequestBody @Valid TecnologiasDTO dto) {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(serviceAdminRegistrar.salvarTecnologias(dto));

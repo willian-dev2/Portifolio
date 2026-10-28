@@ -23,6 +23,6 @@ public class ExperienciaDTO {
     private LocalDate dataInicio;
     private LocalDate dataFim;
     private String descricao;
-    private Set<TecnologiasEntity> tecnologias;
+    private Set<TecnologiasDTO> tecnologias;
 
 }

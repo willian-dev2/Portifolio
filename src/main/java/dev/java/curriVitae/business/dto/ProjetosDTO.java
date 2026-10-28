@@ -2,6 +2,7 @@ package dev.java.curriVitae.business.dto;
 
 import dev.java.curriVitae.infrastructure.entity.TecnologiasEntity;
 import dev.java.curriVitae.infrastructure.enums.StatusProjetoEnum;
+import jakarta.persistence.Column;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -15,6 +16,7 @@ import java.util.Set;
 public class ProjetosDTO {
 
     private Long id;
+    private String titulo;
     private String slug;
     private String resumo;
     private String descricao;
@@ -25,6 +27,6 @@ public class ProjetosDTO {
     private boolean destaque;
     private LocalDate dataInicial;
     private LocalDate dataFinal;
-    private Set<TecnologiasEntity> tecnologias;
+    private Set<TecnologiasDTO> tecnologias;
 
 }

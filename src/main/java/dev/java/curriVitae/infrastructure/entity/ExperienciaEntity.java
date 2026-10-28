@@ -21,9 +21,9 @@ public class ExperienciaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "empresa", length = 50)
+    @Column(name = "empresa", length = 100)
     private String empresa;
-    @Column(name = "cargo", length = 50)
+    @Column(name = "cargo", length = 100)
     private String cargo;
     @Enumerated(EnumType.STRING)
     @Column(name = "tipo_contrato", length = 50)
@@ -35,12 +35,12 @@ public class ExperienciaEntity {
     private LocalDate dataInicio;
     @Column(name = "data_fim", length = 50)
     private LocalDate dataFim;
-    @Column(name = "descricao", length = 300)
+    @Column(name = "descricao", columnDefinition = "TEXT")
     private String descricao;
     @ManyToMany
     @JoinTable(
-            name = "projeto_tecnologia",
-            joinColumns = @JoinColumn(name = "projeto_id"),
+            name = "experiencia_tecnologia",
+            joinColumns = @JoinColumn(name = "experiencia_id"),
             inverseJoinColumns = @JoinColumn(name = "tecnologia_id")
     )
     private Set<TecnologiasEntity> tecnologias = new HashSet<>();

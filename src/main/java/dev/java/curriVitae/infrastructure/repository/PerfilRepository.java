@@ -9,10 +9,5 @@ import java.util.Optional;
 
 public interface PerfilRepository extends JpaRepository<PerfilEntity, Long> {
 
-    List<PerfilEntity> findAll();
-
-    Optional<PerfilEntity> findAllby();
-
-    Optional<PerfilEntity> findById(Long id);
-
+    Long id(Long id);
 }

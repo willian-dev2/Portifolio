@@ -2,10 +2,7 @@ package dev.java.curriVitae.infrastructure.entity;
 
 import dev.java.curriVitae.infrastructure.enums.StatusProjetoEnum;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -17,6 +14,7 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "projetos")
+@Builder
 public class ProjetosEntity {
 
     @Id
@@ -49,7 +47,7 @@ public class ProjetosEntity {
     private boolean destaque;
 
     @Column(name = "data_inicio", length = 300)
-    private LocalDate dataIncial;
+    private LocalDate dataInicial;
 
     @Column(name = "data_fim", length = 300)
     private LocalDate dataFinal;

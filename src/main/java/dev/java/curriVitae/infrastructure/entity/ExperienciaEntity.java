@@ -3,10 +3,7 @@ package dev.java.curriVitae.infrastructure.entity;
 import dev.java.curriVitae.infrastructure.enums.ContratoEnum;
 import dev.java.curriVitae.infrastructure.enums.ModalidadeEnum;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -18,6 +15,7 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "experiencia")
+@Builder
 public class ExperienciaEntity {
 
     @Id

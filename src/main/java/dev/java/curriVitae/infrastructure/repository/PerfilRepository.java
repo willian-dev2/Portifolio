@@ -9,5 +9,4 @@ import java.util.Optional;
 
 public interface PerfilRepository extends JpaRepository<PerfilEntity, Long> {
 
-    Long id(Long id);
 }

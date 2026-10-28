@@ -20,6 +20,6 @@ public class PerfilDTO {
     private String gitHubUrl;
     private String linkedinUrl;
     private String curriculoPdfUrl;
-    private boolean disponivel;
+    private Boolean disponivel;
 
 }

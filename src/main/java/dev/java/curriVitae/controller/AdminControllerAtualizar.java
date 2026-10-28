@@ -16,7 +16,7 @@ public class AdminControllerAtualizar {
 
 
     // Todos os métodos de modificação e acesso do admin
-    @PutMapping("/Tecnologias/{id}")
+    @PutMapping("/tecnologias/{id}")
     public ResponseEntity<TecnologiasDTO> atualizarTecnologias(@RequestBody TecnologiasDTO dto,
                                                                @PathVariable Long id){
 

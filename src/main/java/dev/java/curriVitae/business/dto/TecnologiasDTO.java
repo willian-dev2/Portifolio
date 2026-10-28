@@ -16,7 +16,7 @@ public class TecnologiasDTO {
     private String icone;
     private CategoriaEnum categoria;
     private NivelEnum nivel;
-    private boolean destaque;
-    private int ordem;
+    private Boolean destaque;
+    private Integer ordem;
 
 }

@@ -27,7 +27,7 @@ public class ProjetosEntity {
     @Column(name = "slug", length = 300)
     private String slug;
 
-    @Column(name = "resumo", length = 200)
+    @Column(name = "resumo", length = 400)
     private String resumo;
 
     @Column(name = "descricao", columnDefinition = "TEXT")

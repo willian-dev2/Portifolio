@@ -3,6 +3,7 @@ package dev.java.curriVitae.business.service;
 import dev.java.curriVitae.business.dto.*;
 import dev.java.curriVitae.business.mapper.*;
 import dev.java.curriVitae.infrastructure.entity.*;
+import dev.java.curriVitae.infrastructure.exception.ResourceNotFoundException;
 import dev.java.curriVitae.infrastructure.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -31,7 +32,7 @@ public class ServiceAdminAtualizar {
     public ExperienciaDTO atualizarExperiencia(ExperienciaDTO experienciaDTO, Long id) {
 
         ExperienciaEntity experencia = experienciaRepository.findById(id).orElseThrow(
-                () -> new RuntimeException("Experiência não encontrada"));
+                () -> new ResourceNotFoundException("Experiência não encontrada"));
 
         experienciaConverter.updateEntityExperiencia(experienciaDTO, experencia);
 
@@ -43,7 +44,7 @@ public class ServiceAdminAtualizar {
     public FormacaoDTO atualizarFormacao(FormacaoDTO formacaoDTO, Long id) {
 
         FormacaoEntity formacao = formacaoRepository.findById(id).orElseThrow(
-                () -> new RuntimeException("Tabela não encontrada"));
+                () -> new ResourceNotFoundException("Tabela não encontrada"));
 
         formacaoConverter.updateEntityFormacao(formacaoDTO, formacao);
 
@@ -55,7 +56,7 @@ public class ServiceAdminAtualizar {
     public TecnologiasDTO atualizarTecnologias(TecnologiasDTO tecnologiasDTO, Long id) {
 
         TecnologiasEntity tecnologia = tecnologiasRepository.findById(id).orElseThrow(
-                () -> new  RuntimeException("Tabela não encontrada"));
+                () -> new ResourceNotFoundException("Tabela não encontrada"));
 
         tecnologiasConverter.updateEntityTecnologias(tecnologiasDTO, tecnologia);
 
@@ -67,7 +68,7 @@ public class ServiceAdminAtualizar {
     public ProjetosDTO atualizarProjetos(ProjetosDTO projetosDTO, Long id) {
 
         ProjetosEntity projetos = projetosRepository.findById(id).orElseThrow(
-                () -> new RuntimeException("Tabela não encontrada"));
+                () -> new ResourceNotFoundException("Tabela não encontrada"));
 
         projetosConverter.updateEntityProjetos(projetosDTO, projetos);
 
@@ -79,7 +80,7 @@ public class ServiceAdminAtualizar {
     public PerfilDTO atualizarPerfil(PerfilDTO perfilDTO, Long id) {
 
         PerfilEntity perfil = perfilRepository.findById(id).orElseThrow(
-                () -> new RuntimeException("Tabela não encontrada"));
+                () -> new ResourceNotFoundException("Tabela não encontrada"));
 
         perfilConverter.updateEntityPerfil(perfilDTO, perfil);
 

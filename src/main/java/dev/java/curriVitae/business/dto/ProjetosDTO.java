@@ -24,7 +24,7 @@ public class ProjetosDTO {
     private String imagemCapaUrl;
     private String githubUrl;
     private StatusProjetoEnum status;
-    private boolean destaque;
+    private Boolean destaque;
     private LocalDate dataInicial;
     private LocalDate dataFinal;
     private Set<TecnologiasDTO> tecnologias;

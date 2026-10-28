@@ -2,6 +2,8 @@ package dev.java.curriVitae.infrastructure.exception.handle;
 
 import dev.java.curriVitae.infrastructure.exception.ResourceNotFoundException;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -13,6 +15,11 @@ import java.util.Map;
 
 @RestControllerAdvice
 public class GlobalExceptionHandle {
+
+
+    // NOVO: objeto que escreve mensagens no console
+    private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandle.class);
+
 
     // Anotação faz com que sempre que o sistema lançar essa excessão, ele seja interceptado por esse método
     @ExceptionHandler(ResourceNotFoundException.class)
@@ -27,6 +34,7 @@ public class GlobalExceptionHandle {
 
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<Map<String, String>> handleRunTime(RuntimeException ex) {
+        log.error("Erro inesperado", ex);
         Map<String, String> error = new HashMap<>();
         error.put("error", "erro interno no servidor");
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error); // 400

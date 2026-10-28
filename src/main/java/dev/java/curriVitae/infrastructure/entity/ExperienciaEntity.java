@@ -3,7 +3,10 @@ package dev.java.curriVitae.infrastructure.entity;
 import dev.java.curriVitae.infrastructure.enums.ContratoEnum;
 import dev.java.curriVitae.infrastructure.enums.ModalidadeEnum;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -15,15 +18,14 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "experiencia")
-@Builder
 public class ExperienciaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "empresa", length = 100)
+    @Column(name = "empresa", length = 50)
     private String empresa;
-    @Column(name = "cargo", length = 100)
+    @Column(name = "cargo", length = 50)
     private String cargo;
     @Enumerated(EnumType.STRING)
     @Column(name = "tipo_contrato", length = 50)
@@ -35,12 +37,12 @@ public class ExperienciaEntity {
     private LocalDate dataInicio;
     @Column(name = "data_fim", length = 50)
     private LocalDate dataFim;
-    @Column(name = "descricao", columnDefinition = "TEXT")
+    @Column(name = "descricao", length = 300)
     private String descricao;
     @ManyToMany
     @JoinTable(
-            name = "experiencia_tecnologia",
-            joinColumns = @JoinColumn(name = "experiencia_id"),
+            name = "projeto_tecnologia",
+            joinColumns = @JoinColumn(name = "projeto_id"),
             inverseJoinColumns = @JoinColumn(name = "tecnologia_id")
     )
     private Set<TecnologiasEntity> tecnologias = new HashSet<>();

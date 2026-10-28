@@ -3,7 +3,10 @@ package dev.java.curriVitae.infrastructure.entity;
 import dev.java.curriVitae.infrastructure.enums.CategoriaEnum;
 import dev.java.curriVitae.infrastructure.enums.NivelEnum;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -11,7 +14,6 @@ import lombok.*;
 @Setter
 @Entity
 @Table(name = "tecnologias")
-@Builder
 public class TecnologiasEntity {
 
     @Id
